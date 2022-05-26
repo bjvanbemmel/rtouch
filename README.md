@@ -7,6 +7,13 @@ I use the `touch` command multiple times a day. It's a simple command with only 
 
 So yeah, use `rtouch` instead of `touch` if you want to skip the `mkdir` command. That's all there is to it.
 
+## Installation:
+- Grab your system's binary from <a href="https://github.com/bjvanbemmel/rtouch/releases/latest">the releases page</a>.
+- Move the binary to your path. Linux example:
+```bash
+sudo mv rtouch ~/usr/local/bin/
+```
+
 ## Usage:
 Help / usage:
 ```
@@ -33,9 +40,13 @@ rtouch -f project/main.go
 rtouch --force project/main.go
 ```
 
+## Contribute:
+`rtouch` makes use of the MIT license. You're free to create a pull request and/or fork the project. Just make sure to keep the MIT license and copyright notice.
+
 ## Todo:
 - Allow for multiple filepath args (can only create one file per command right now)
 - Include ability to assign permissions
+- Put it up on repositories for ease of download.
 
 #
 ##### &copy; Beau Jean van Bemmel, 2022
