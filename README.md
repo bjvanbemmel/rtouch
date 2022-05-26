@@ -18,7 +18,8 @@ So yeah, use `rtouch` instead of `touch` if you want to skip the `mkdir` command
 - Grab your system's binary from <a href="https://github.com/bjvanbemmel/rtouch/releases/latest">the releases page</a>.
 - Move the binary to your path. Linux example:
 ```bash
-sudo mv rtouch ~/usr/local/bin/
+sudo chmod +x rtouch_linux_amd64
+sudo mv rtouch_linux_amd64 ~/usr/local/bin/rtouch
 ```
 
 ## Usage:
