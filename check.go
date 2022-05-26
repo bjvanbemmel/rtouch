@@ -30,3 +30,7 @@ func checkFolderExists(folders string) bool {
 
 	return err == nil
 }
+
+func checkFolderArgGiven(filePathSplit []string) bool {
+	return len(filePathSplit) > 1
+}

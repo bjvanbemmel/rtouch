@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -16,5 +17,12 @@ func askConsent() bool {
 		return true
 	default:
 		return false
+	}
+}
+
+func checkConsentAndExitIfFalse() {
+	if !askConsent() {
+		fmt.Println("Cancelled.")
+		os.Exit(1)
 	}
 }

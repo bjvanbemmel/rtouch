@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -18,16 +19,16 @@ func main() {
 	var newFile = filePathSplit[len(filePathSplit)-1]
 	var newFolders = givenFilePath[0 : len(givenFilePath)-len(newFile)]
 
-	if checkFolderExists(newFolders) {
-		createFile(newFolders + newFile)
-	} else if !forced {
-		if askConsent() {
+	fmt.Println(checkFolderExists(newFolders))
+	if checkFolderArgGiven(filePathSplit) {
+		if !checkFolderExists(newFolders) {
+			if !forced {
+				checkConsentAndExitIfFalse()
+			}
+
 			createFolder(newFolders)
-			createFile(newFolders + newFile)
 		}
-	} else {
-		createFolder(newFolders)
-		createFile(newFolders + newFile)
 	}
 
+	createFile(newFolders + newFile)
 }
