@@ -15,11 +15,18 @@ I use the `touch` command multiple times a day. It's a simple command with only 
 So yeah, use `rtouch` instead of `touch` if you want to skip the `mkdir` command. That's all there is to it.
 
 ## Installation:
+### Via releases:
 - Grab your system's binary from <a href="https://github.com/bjvanbemmel/rtouch/releases/latest">the releases page</a>.
 - Move the binary to your path. Linux example:
 ```bash
 sudo chmod +x rtouch_linux_amd64
-sudo mv rtouch_linux_amd64 ~/usr/local/bin/rtouch
+mv rtouch_linux_amd64 ~/.local/bin/rtouch
+```
+### From source:
+- Clone the repository.
+- Execute the following command:
+```bash
+make install
 ```
 
 ## Usage:
@@ -36,6 +43,7 @@ Create new file within new folder:
 ```
 rtouch project/main.go
 rtouch ~/workspace/project/src/main.go
+rtouch project/main.go project/user.go
 ```
 `rtouch` will ask you for confirmation when creating new folders.
 ```

@@ -13,6 +13,11 @@ var force bool
 func main() {
 	initFlags()
 
+	if len(os.Args[1:]) == 0 {
+		fmt.Println("No filepath given.")
+		os.Exit(1)
+	}
+
 	for _, path := range os.Args[1:] {
 		if !strings.HasPrefix(path, "-") {
 			for _, err := range createPath(path) {
