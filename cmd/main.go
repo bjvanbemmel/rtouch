@@ -52,8 +52,6 @@ func createPath(givenFilePath string) []error {
 
 	var allErrors = []error{}
 
-	fmt.Println(folder, file)
-
 	if _, err := os.Stat(folder); os.IsNotExist(err) && folder != "" {
 		if !force {
 			if askConsent() {
