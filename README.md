@@ -52,7 +52,7 @@ rtouch --force project/main.go
 `rtouch` makes use of the MIT license. You're free to create a pull request and/or fork the project. Just make sure to keep the MIT license and copyright notice.
 
 ## Todo:
-- Allow for multiple filepath args (can only create one file per command right now)
+- ~~Allow for multiple filepath args (can only create one file per command right now)~~
 - Include ability to assign permissions
 - Put it up on repositories for ease of download.
 
