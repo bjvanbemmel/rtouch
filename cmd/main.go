@@ -52,7 +52,9 @@ func createPath(givenFilePath string) []error {
 
 	var allErrors = []error{}
 
-	if _, err := os.Stat(folder); os.IsNotExist(err) {
+	fmt.Println(folder, file)
+
+	if _, err := os.Stat(folder); os.IsNotExist(err) && folder != "" {
 		if !force {
 			if askConsent() {
 				allErrors = append(allErrors, createFolder(folder))
@@ -62,16 +64,14 @@ func createPath(givenFilePath string) []error {
 		}
 	}
 
-	if _, err := os.Stat(folder); !os.IsNotExist(err) {
-		allErrors = append(allErrors, createFile(folder, file))
-	}
+	allErrors = append(allErrors, createFile(folder, file))
 
 	return allErrors
 }
 
 // Create file, return error
 func createFile(givenFolder, givenFile string) error {
-	_, err := os.Create(givenFolder + "/" + givenFile)
+	_, err := os.Create(givenFolder + givenFile)
 	return err
 }
 
