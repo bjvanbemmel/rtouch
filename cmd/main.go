@@ -30,6 +30,7 @@ func main() {
 	}
 }
 
+//  Confirmation prompt
 func askConsent() bool {
 	var consent string
 
@@ -93,7 +94,7 @@ func initFlags() {
 		fmt.Println("Usage: rtouch [--force] [FILEPATH]")
 		fmt.Println("Resursive Touch (rtouch) allows you to create a new file and/or the corresponding folder(s) when they don't exist yet.")
 		fmt.Printf("\n-h, --help %58v\n", helpUsage)
-		fmt.Printf("-h, --help %57v\n\n", forceUsage)
+		fmt.Printf("-f, --force %56v\n\n", forceUsage)
 		fmt.Println("(C) Beau Jean van Bemmel, 2022")
 	}
 
