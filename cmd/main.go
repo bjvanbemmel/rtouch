@@ -61,6 +61,8 @@ func createPath(givenFilePath string) []error {
 			} else {
 				allErrors = append(allErrors, fmt.Errorf("permission not granted - canceled"))
 			}
+		} else {
+			allErrors = append(allErrors, createFolder(folder))
 		}
 	}
 
