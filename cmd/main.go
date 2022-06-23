@@ -55,14 +55,11 @@ func createPath(givenFilePath string) []error {
 
 	if _, err := os.Stat(folder); os.IsNotExist(err) && folder != "" {
 		if !force {
-			if askConsent() {
-				allErrors = append(allErrors, createFolder(folder))
-			} else {
-				allErrors = append(allErrors, fmt.Errorf("permission not granted - canceled"))
+			if !askConsent() {
+				allErrors = append(allErrors, fmt.Errorf("permission not granded - canceled"))
 			}
-		} else {
-			allErrors = append(allErrors, createFolder(folder))
 		}
+		allErrors = append(allErrors, createFolder(folder))
 	}
 
 	allErrors = append(allErrors, createFile(folder, file))
