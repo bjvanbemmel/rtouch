@@ -24,10 +24,19 @@ mv rtouch_linux_amd64 ~/.local/bin/rtouch
 ```
 ### From source:
 - Clone the repository.
-- Execute the following command:
+- Move into the newly added directory.
+- Execute ``make install`` (or ``make build``).
+- (optional) Move newly created executable to your path.
 ```bash
+git clone https://github.com/bjvanbemmel/rtouch.git
+cd rtouch
+# If ~/.local/bin is within your path.
 make install
+# Else
+make build
+mv ./bin/rtouch_linux_amd64 /usr/bin/rtouch
 ```
+*``make install`` will move the executable into the ~/.local/bin folder. If this folder is not part of your path, please either change it or use ``make build`` and manually move it to a folder that's within your path.*
 
 ## Usage:
 Help / usage:
@@ -45,16 +54,6 @@ rtouch project/main.go
 rtouch ~/workspace/project/src/main.go
 rtouch project/main.go project/user.go
 ```
-`rtouch` will ask you for confirmation when creating new folders.
-```
-New folder(s) will have to be created. Do you consent? [y/N]
-> y
-```
-Skip confirmation prompt:
-```
-rtouch -f project/main.go
-rtouch --force project/main.go
-```
 
 ## Contribute:
 `rtouch` makes use of the MIT license. You're free to create a pull request and/or fork the project. Just make sure to keep the MIT license and copyright notice.
@@ -62,7 +61,6 @@ rtouch --force project/main.go
 ## Todo:
 - ~~Allow for multiple filepath args (can only create one file per command right now)~~
 - Include ability to assign permissions
-- Put it up on repositories for ease of download.
 
 #
 ##### &copy; Beau Jean van Bemmel, 2022
