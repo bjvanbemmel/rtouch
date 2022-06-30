@@ -63,7 +63,7 @@ func initFlags() {
 
 	flag.Usage = func() {
 		fmt.Println("Usage: rtouch [--force] [FILEPATH]")
-		fmt.Println("Resursive Touch (rtouch) allows you to create a new file and/or the corresponding folder(s) when they don't exist yet.")
+		fmt.Println("Recursive Touch (rtouch) allows you to create a new file and/or the corresponding folder(s) when they don't exist yet.")
 		fmt.Printf("\n-h, --help %58v\n", helpUsage)
 		fmt.Println("(C) Beau Jean van Bemmel, 2022")
 	}
